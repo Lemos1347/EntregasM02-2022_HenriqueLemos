@@ -8,7 +8,7 @@
 }
 body
 {
-    background: lightblue;
+    background-image: url("universerbackground.png");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@ body
 .container .left_side
 {
     position: relative;
-    background: #003147;
+    background: #161837;
     padding: 40px;
 }
 .profile_text
@@ -102,12 +102,18 @@ overflow: hidden;
     display: inline-block;
     width: 30px;
     font-size: 18px;
-    color: #03a9f4;
+    color: #6cd4f5;
 }
 .contactInfo ul li span
 {
     color: #fff;
     font-weight: 300;
+}
+a
+{
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
 }
 .EducationInfo .title
 {
@@ -120,7 +126,7 @@ overflow: hidden;
 }
 .EducationInfo h5
 {
-    color: #03a9f4;
+    color: #6cd4f5;
     font-weight: 500;
 }
 .EducationInfo h4:nth-child(2)
@@ -148,7 +154,7 @@ overflow: hidden;
     top: 0;
     left: 0;
     height: 100%;
-    background: #03a9f4;
+    background: #6cd4f5;
 }
 .LanguageInfo .title
 {
@@ -204,7 +210,7 @@ p
 .about .box .text h4
 {
     text-transform: uppercase;
-    color: #2a7da2;
+    color: #6cd4f5;
     font-size: 16px;
 }
 .skills .box
@@ -236,7 +242,7 @@ p
     top: 0;
     left: 0;
     height: 100%;
-    background: #03a9f4;
+    background: #6cd4f5;
 }
 .interest ul
 {
@@ -252,7 +258,7 @@ p
 }
 .interest ul li .fa 
 {
-    color: #03a9f4;
+    color: #6cd4f5;
     font-size: 18px;
     width: 20px;
 }
