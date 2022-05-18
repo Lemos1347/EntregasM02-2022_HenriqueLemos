@@ -20,9 +20,13 @@ function calcular() {
         resultado = a * b
         saida = 'Sua operação é: ' + a + ' x ' + b + ' = ' + resultado
     }
-    if (iden == 'porcentagem') {
+    if (iden == 'resto') {
         resultado = a % b
         saida = 'Sua operação é: ' + a + ' % ' + b + ' = ' + resultado
+    }
+    if (iden == 'inteiro') {
+        resultado = Math.floor(a / b)
+        saida = 'Sua operação é: ' + a + ' // ' + b + ' = ' + resultado
     }
     alert(saida)
 }
@@ -122,9 +126,8 @@ function lista() {
         return 0
     })
 
-    index = (arrayLista.indexOf(numeroFoco)) + 1
+    index = arrayLista.indexOf(numeroFoco) + 1
 
-    document.getElementById("listaNova").innerHTML = arrayLista
-    document.getElementById("posicao").innerHTML = `O número ${numeroFoco} é o número ${index} da sua lista` 
+    document.getElementById('listaNova').innerHTML = arrayLista
+    document.getElementById('posicao').innerHTML = `O número ${numeroFoco} é o número ${index} da sua lista`
 }
-
