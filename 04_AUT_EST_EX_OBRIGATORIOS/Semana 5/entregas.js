@@ -1,9 +1,9 @@
 function calcular() {
-    var a = parseFloat(document.getElementById('numberOne').value)
-    var b = parseFloat(document.getElementById('numberTwo').value)
-    let resultado
-    let saida
-    var iden = document.getElementById('option').value.toString()
+    var a = parseFloat(document.getElementById('numberOne').value);
+    var b = parseFloat(document.getElementById('numberTwo').value);
+    let resultado;
+    let saida;
+    var iden = document.getElementById('option').value.toString();
     if (iden == 'soma') {
         resultado = a + b
         saida = 'Sua operação é: ' + a + ' + ' + b + ' = ' + resultado
@@ -28,18 +28,18 @@ function calcular() {
         resultado = Math.floor(a / b)
         saida = 'Sua operação é: ' + a + ' // ' + b + ' = ' + resultado
     }
-    alert(saida)
+    alert(saida);
 }
 
 function notas() {
-    let produto = parseFloat(document.getElementById('productPrice').value)
-    let notasCem = 0
-    let notasCinquenta = 0
-    let notasVinte = 0
-    let notasDez = 0
-    let notasCinco = 0
-    let notasDois = 0
-    let notasUm = 0
+    let produto = parseFloat(document.getElementById('productPrice').value);
+    let notasCem = 0;
+    let notasCinquenta = 0;
+    let notasVinte = 0;
+    let notasDez = 0;
+    let notasCinco = 0;
+    let notasDois = 0;
+    let notasUm = 0;
 
     for (let x = 100; x > 0; x--) {
         if (x == 1 || x == 2 || x == 5 || x == 10 || x == 20 || x == 50 || x == 100) {
@@ -106,15 +106,14 @@ function notas() {
             ' +' +
             notasUm +
             ' notas de 1'
-    )
+    );
 }
 
 function lista() {
-    debugger
-    let lista = document.getElementById('lista').value
-    let arrayLista = lista.split(' ')
-    let numeroFoco = parseFloat(document.getElementById('numeroFoco').value)
-    let index = 0
+    let lista = document.getElementById('lista').value;
+    let arrayLista = lista.split(' ');
+    let numeroFoco = parseFloat(document.getElementById('numeroFoco').value);
+    let index = 0;
 
     for (let i = 0; i < arrayLista.length; i++) {
         arrayLista[i] = Number(arrayLista[i])
@@ -126,8 +125,8 @@ function lista() {
         return 0
     })
 
-    index = arrayLista.indexOf(numeroFoco) + 1
+    index = arrayLista.indexOf(numeroFoco) + 1;
 
-    document.getElementById('listaNova').innerHTML = arrayLista
-    document.getElementById('posicao').innerHTML = `O número ${numeroFoco} é o número ${index} da sua lista`
+    document.getElementById('listaNova').innerHTML = arrayLista;
+    document.getElementById('posicao').innerHTML = `O número ${numeroFoco} é o número ${index} da sua lista`;
 }
