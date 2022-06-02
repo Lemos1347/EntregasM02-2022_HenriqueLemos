@@ -1,5 +1,3 @@
-//Semana 7
-
 const somar = () => {
     let valor = Number($('#productPrice').val()) 
     valor ++
@@ -85,7 +83,7 @@ const calculoAluno = () => {
     let menorTrabalho = 0
     for (let i = 1; i <= totalAlunos ; i++ ){
         let mediaAluno = 0
-        mediaAluno = ((parseFloat($(`#prova${i}`).val())*2) + (parseFloat($(`#trabalho${i}`).val())*3))/2
+        mediaAluno = ((parseFloat($(`#prova${i}`).val())*2) + (parseFloat($(`#trabalho${i}`).val())*3))/5
         $(`#saida${i}`).html(`<span>A média desse aluno é ${mediaAluno}</span>`)
 
         contagemMediaProva += parseFloat($(`#prova${i}`).val()) 
