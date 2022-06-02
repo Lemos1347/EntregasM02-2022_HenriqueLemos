@@ -1,0 +1,16 @@
+{
+  "name": "semana-2",
+  "version": "1.0.0",
+  "description": "Essa etapa tem por objetivo mostrar como disponibilizar páginas web para o usuário por um servidor, incluindo a disponibilização de todo conteúdo existente dentro do diretório",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security"
+  }
+}

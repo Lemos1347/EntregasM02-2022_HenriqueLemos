@@ -1,10 +1,3 @@
-let nome = prompt('Qual o seu nome?')
-alert('Bem vindo ao meu currículo ' + nome + '!')
-
-for (let x = 1; x < 10; x++) {
-    $('footer').fadeOut('2000').fadeIn('200')
-}
-
 function createUser() {
     $.ajax({
         type: 'POST',
@@ -24,7 +17,7 @@ const getEmails = () => {
         success: function (res) {
             let elements = ''
             for (i of res) {
-                elements += `<p class="email${i.id}">${i.emailUser} <button onClick="deleteEmails(${i.id})">Deletar</button></p>`
+                elements += `<p class="email${i.id}">${i.emailUser} <button onClick="deleteEmails(${i.id})">Deletar</button><button onClick="createInput(${i.id})">Editar</button></p>`
             }
             $('.emails').html(elements)
             console.log(res)
@@ -44,6 +37,31 @@ const deleteEmails = (id) => {
             $('.email' + id).remove()
         },
     })
+}
+
+const editEmails = (id) => {
+
+    $.ajax({
+        type: 'PATCH',
+        url: 'http://localhost:3001/email/' + id,
+        contentType: 'application/json',
+        datatype: 'json',
+        data: JSON.stringify({ emailUser: $('#newEmail').val()}),
+        success: function (res) {
+            btnRemove()
+            getEmails()
+        }
+    })
+}
+
+const btnRemove = () => {
+    $('#newEmail').remove()
+    $('#btnNewEmail').remove()
+}
+
+const createInput = (id) => {
+    let input = `<input type='text' id='newEmail'><button id='btnNewEmail' onClick='editEmails(${id})' type="button">Salvar</button>`
+    $('.email' + id).append(input)
 }
 
 

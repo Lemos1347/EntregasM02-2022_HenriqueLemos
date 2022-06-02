@@ -43,10 +43,11 @@ app.post('/email/create', async (req, res) => {
 app.patch('/email/:id', async (req, res) =>{
 	try{
 		const id = req.params.id
-		const { emailUser, messageUser } = req.body
+		const { emailUser} = req.body
+		console.log(req.body)
 
 		const db = await open({ filename: DBPATH, driver: sqlite3.Database }) // Abre o banco
-		await db.run(`UPDATE email SET emailUser = "${emailUser}", messageUser = "${messageUser}" WHERE id = "${id}"`)
+		await db.run(`UPDATE email SET emailUser = "${emailUser}" WHERE id = "${id}"`)
 		await db.close()
 		res.send()
 	} catch (err) {
