@@ -56,16 +56,19 @@ const calculoPassagem = () =>{
     
 }
 
-let count = 1
+// let count = 1
 const adicionarEspaco = () =>{
-    count++
+    $('.campoDel').remove()
+    numCampos = $('#numAlunos').val()
 
-    $('#campo').append(`<li>
-    <input id="numAluno${count}" placeholder="nome aluno">
-    <input id="prova${count}" placeholder="nota prova">
-    <input id="trabalho${count}" placeholder="nota trabalho">
-    <span class="saida" id="saida${count}"></span><br>
-</li>`)
+    for (let i = 2 ; i <= numCampos ; i++) {
+        $('#campo').append(`<li class="campoDel">
+    <input id="numAluno${i}" placeholder="nome aluno(opcional)">
+    <input id="prova${i}" placeholder="nota prova">
+    <input id="trabalho${i}" placeholder="nota trabalho">
+    <span class="saida" id="saida${i}"></span><br>
+    </li>`)
+    }
 }
 const calculoAluno = () => {
     let totalAlunos = $('#numAlunos').val()
@@ -88,7 +91,7 @@ const calculoAluno = () => {
 
         contagemMediaProva += parseFloat($(`#prova${i}`).val()) 
 
-        contagemMediaGeral += (parseFloat($(`#prova${i}`).val()) + parseFloat($(`#trabalho${i}`).val()))
+        contagemMediaGeral += ((parseFloat($(`#prova${i}`).val()) + parseFloat($(`#trabalho${i}`).val())))
 
         contagemTrabalho += parseFloat($(`#trabalho${i}`).val())
 
@@ -103,14 +106,16 @@ const calculoAluno = () => {
         return a - b 
     })
 
-    mediaGeral = contagemMediaGeral/totalAlunos
-    mediaGeralProva = contagemMediaProva/totalAlunos
-    mediaTrabalho = contagemTrabalho/totalAlunos
+    console.log(contagemMediaGeral)
+
+    mediaGeral = (contagemMediaGeral/(2*totalAlunos)).toFixed(2)
+    mediaGeralProva = (contagemMediaProva/totalAlunos).toFixed(2)
+    mediaTrabalho = (contagemTrabalho/totalAlunos).toFixed(2)
     maiorProva = todasNotas[todasNotas.length - 1]
     menorProva = todasNotas[0]
     maiorTrabalho = todosTrabalhos[todosTrabalhos.length - 1]
     menorTrabalho = todosTrabalhos[0]
 
-    $('#saida').html(`A média total dos alunos é ${mediaGeral} ; A média total das provas é ${mediaGeral} ; A média total dos trabalhos é ${mediaTrabalho}<br><br>Maior nota de prova foi ${maiorProva} e a menor nota de prova foi ${menorProva}<br><br>Maior nota de trabalho foi ${maiorTrabalho} e a menor nota de trabalho foi ${menorTrabalho}`)
+    $('#saida').html(`A média total dos alunos é ${mediaGeral} ; A média total das provas é ${mediaGeralProva} ; A média total dos trabalhos é ${mediaTrabalho}<br><br>Maior nota de prova foi ${maiorProva} e a menor nota de prova foi ${menorProva}<br><br>Maior nota de trabalho foi ${maiorTrabalho} e a menor nota de trabalho foi ${menorTrabalho}`)
 
 }
