@@ -60,6 +60,7 @@ const calculoPassagem = () =>{
 const adicionarEspaco = () =>{
     $('.campoDel').remove()
     numCampos = $('#numAlunos').val()
+    $("#mediaAluno").remove()
 
     for (let i = 2 ; i <= numCampos ; i++) {
         $('#campo').append(`<li class="campoDel">
@@ -87,11 +88,11 @@ const calculoAluno = () => {
     for (let i = 1; i <= totalAlunos ; i++ ){
         let mediaAluno = 0
         mediaAluno = ((parseFloat($(`#prova${i}`).val())*2) + (parseFloat($(`#trabalho${i}`).val())*3))/5
-        $(`#saida${i}`).html(`<span>A média desse aluno é ${mediaAluno}</span>`)
+        $(`#saida${i}`).html(`<span id="mediaAluno">A média desse aluno é ${mediaAluno}</span>`)
 
         contagemMediaProva += parseFloat($(`#prova${i}`).val()) 
 
-        contagemMediaGeral += ((parseFloat($(`#prova${i}`).val()) + parseFloat($(`#trabalho${i}`).val())))
+        contagemMediaGeral += mediaAluno
 
         contagemTrabalho += parseFloat($(`#trabalho${i}`).val())
 
@@ -106,9 +107,7 @@ const calculoAluno = () => {
         return a - b 
     })
 
-    console.log(contagemMediaGeral)
-
-    mediaGeral = (contagemMediaGeral/(2*totalAlunos)).toFixed(2)
+    mediaGeral = (contagemMediaGeral/totalAlunos).toFixed(2)
     mediaGeralProva = (contagemMediaProva/totalAlunos).toFixed(2)
     mediaTrabalho = (contagemTrabalho/totalAlunos).toFixed(2)
     maiorProva = todasNotas[todasNotas.length - 1]
