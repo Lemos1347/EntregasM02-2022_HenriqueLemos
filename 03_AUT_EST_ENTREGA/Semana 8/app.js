@@ -10,6 +10,8 @@ const DBPATH = './BancoDeDadosCurriculo.db'
 
 app.use(express.json())
 
+app.use(express.static('.'))
+
 
 app.get('/email', async (req, res) => {
 	try{

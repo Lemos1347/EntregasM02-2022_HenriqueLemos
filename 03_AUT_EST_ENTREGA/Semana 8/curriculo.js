@@ -5,6 +5,9 @@ function createUser() {
         data: JSON.stringify({ emailUser: $('#emailUser').val(), messageUser: $('#messageUser').val() }),
         contentType: 'application/json',
         datatype: 'json',
+        success: function() {
+            getEmails()
+        }
     })
 }
 
