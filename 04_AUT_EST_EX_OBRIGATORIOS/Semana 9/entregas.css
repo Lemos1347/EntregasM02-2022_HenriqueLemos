@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+}
+
+main{
+    text-align: center;
+    font-size: 30px;
+}
+.btn-exercicio{
+    height: 30px;
+    width: max-content;
+    padding: 10px;
+    background-color: gray;
+    column-gap: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #000;
+    color: #000; 
+}
+.btn-exercicio:hover{
+    background-color: aqua;
+}
+
+li{
+    list-style: none;
+    display: block;
+}
+#buttonback{
+    margin-left: 70%;
+}
+
+.saida {
+    width: 250px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#btnEx5 {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
